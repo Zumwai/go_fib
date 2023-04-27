@@ -47,9 +47,3 @@ func BenchmarkFibdoubling(b *testing.B) {
 		fib(1000)
 	}
 }
-
-func BenchmarkFibonaccibinary(b *testing.B) {
-	for n := 0; n < b.N; n++ {
-		fib(1000)
-	}
-}
