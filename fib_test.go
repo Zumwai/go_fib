@@ -31,9 +31,9 @@ var toTest = []input{
 	{-98, bigminus},
 }
 
-func TestFibdoubling(t *testing.T) {
+func TestFib(t *testing.T) {
 	for _, inp := range toTest {
-		out := fibdoubling(inp.arg)
+		out := fib(inp.arg)
 		res := out.Cmp(inp.expected)
 
 		if res != 0 {
@@ -44,6 +44,12 @@ func TestFibdoubling(t *testing.T) {
 
 func BenchmarkFibdoubling(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		fibdoubling(1000)
+		fib(1000)
+	}
+}
+
+func BenchmarkFibonaccibinary(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		fib(1000)
 	}
 }

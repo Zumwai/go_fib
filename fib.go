@@ -6,7 +6,7 @@ import (
 
 import "math/big"
 
-func fibdoubling(n int64) *big.Int {
+func fib(n int64) *big.Int {
 	if -2 <= n && n <= 2 {
 		switch {
 		case n > 0:
@@ -18,13 +18,13 @@ func fibdoubling(n int64) *big.Int {
 		}
 	}
 	k := n / 2
-	a := fibdoubling(k)
+	a := fib(k)
 
 	var b *big.Int
 	if k > 0 {
-		b = fibdoubling(k + 1)
+		b = fib(k + 1)
 	} else {
-		b = fibdoubling(k - 1)
+		b = fib(k - 1)
 	}
 
 	if n%2 != 0 {
@@ -38,5 +38,5 @@ func fibdoubling(n int64) *big.Int {
 
 func main() {
 	//or "how overflow terminal with digits"
-	fmt.Println(fibdoubling(9000000))
+	fmt.Println(fib(-8))
 }
